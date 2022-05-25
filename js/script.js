@@ -48,8 +48,22 @@ const slider = new Vue({
         //     else if (e.keyCode == '39') {
             //     // right arrow
         //     }
-    
+        
         // }
+    created() {
+        document.addEventListener('keydown', (event) => {
+            const hit = event.key;
+                if (hit == "ArrowUp" ) {
+                    console.log("prev")
+                    // btnPrev()
+                }
+                else if (hit == "ArrowDown" ) {
+                    console.log("next");
+                    // btnNext()
+                }
+                console.log("ops!")
+            }
+        )},
     methods : {
         btnNext() {
             if(this.activeSlide < this.slides.length - 1) {
@@ -61,18 +75,6 @@ const slider = new Vue({
             console.log(this.activeSlide);
             
             
-        },
-        checkKey() {
-            let hit = window.Event;        
-            if (hit.keyCode == 38 ) {
-                // this.btnPrev;
-                console.log("prev")
-            }
-            if (hit.keyCode == 40 ) {
-                // this.btnNext;
-                console.log("next")
-                
-            }
         },
         btnPrev() {
             if(this.activeSlide > 0) {
@@ -87,8 +89,3 @@ const slider = new Vue({
 
     }
 });
-
-// function checkKey(e) {
-//     var event = window.event ? window.event : e;
-//     console.log(event.keyCode)
-// }
