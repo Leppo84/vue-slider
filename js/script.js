@@ -54,14 +54,13 @@ const slider = new Vue({
         document.addEventListener('keydown', (event) => {
             const hit = event.key;
                 if (hit == "ArrowUp" ) {
-                    console.log("prev")
-                    // btnPrev()
+                    console.log("prev");
+                    this.btnPrev();
                 }
                 else if (hit == "ArrowDown" ) {
                     console.log("next");
-                    // btnNext()
+                    this.btnNext();
                 }
-                console.log("ops!")
             }
         )},
     methods : {
