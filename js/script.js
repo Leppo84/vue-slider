@@ -31,17 +31,48 @@ const slider = new Vue({
         ]
         
     },
+    // document.onkeydown = checkKey;
+    // function checkKey(e) {
+        
+        //     e = e || window.event;
+        
+        //     if (e.keyCode == '38') {
+            //         // up arrow
+            //     }
+        //     else if (e.keyCode == '37') {
+        //     // left arrow
+        //     }
+        //     else if (e.keyCode == '40') {
+        //         // down arrow
+        //     }
+        //     else if (e.keyCode == '39') {
+            //     // right arrow
+        //     }
+    
+        // }
     methods : {
         btnNext() {
             if(this.activeSlide < this.slides.length - 1) {
                 this.activeSlide++;
             }
             else {
-            this.activeSlide = 0;
+                this.activeSlide = 0;
             }
             console.log(this.activeSlide);
-
             
+            
+        },
+        checkKey() {
+            let hit = window.Event;        
+            if (hit.keyCode == 38 ) {
+                // this.btnPrev;
+                console.log("prev")
+            }
+            if (hit.keyCode == 40 ) {
+                // this.btnNext;
+                console.log("next")
+                
+            }
         },
         btnPrev() {
             if(this.activeSlide > 0) {
@@ -51,6 +82,13 @@ const slider = new Vue({
                 this.activeSlide = this.slides.length - 1;
             }
             console.log(this.activeSlide);
-        }
+        },
+        
+
     }
 });
+
+// function checkKey(e) {
+//     var event = window.event ? window.event : e;
+//     console.log(event.keyCode)
+// }
