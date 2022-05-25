@@ -33,16 +33,24 @@ const slider = new Vue({
     },
     methods : {
         btnNext() {
-            if(this.activeSlide === this.slides.length) {
-                this.activeSlide = 0;
+            if(this.activeSlide < this.slides.length - 1) {
+                this.activeSlide++;
             }
-            this.activeSlide++;
+            else {
+            this.activeSlide = 0;
+            }
+            console.log(this.activeSlide);
+
+            
         },
         btnPrev() {
-            if(this.activeSlide < 0) {
+            if(this.activeSlide > 0) {
+                this.activeSlide--;
+            }
+            else {
                 this.activeSlide = this.slides.length - 1;
             }
-            this.activeSlide--;
+            console.log(this.activeSlide);
         }
     }
 });
