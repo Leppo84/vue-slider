@@ -14,11 +14,11 @@
         <div  class="container">
             <div class="slider-wrapper" tabindex="0">
                 <div class="item">
-                    <img :src="slide[activeSlide].image" :alt="slide[activeSlide].title" />
+                    <img :src="slides[activeSlide].image" :alt="slides[activeSlide].title" />
                     <div class="text">
-                        <h3>{{title}}</h3>
+                        <h3>{{slides[activeSlide].title}}</h3>
                         <p>
-                            {{text}}
+                            {{slides[activeSlide].text}}
                         </p>
                     </div>
                 </div>
